@@ -1,0 +1,1 @@
+Working on a version of my portfolio website that better represents me and my skills - trying a bunch of stuff. If you're here, chances are you got here because I included the link in the minified code online. Hi! 👋
