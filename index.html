@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		
-		<bg></bg>
+		<div class="bg"></div>
 		
 		<div class="card">
 		
@@ -30,32 +30,18 @@
 			</div>
 			
 			<div class="card-row">
-				<div class="sub-card" id="background"><ul><li class="sub-title"><i class="fas fa-user"></i>Background</li><li>Real life experience in software development, IT, and digital content creation</li><li>Aspiring HDip in Software Design and Development</li><li>MA in Digital Cultures</li></ul></div>
-				<div class="sub-card" id="interests"><ul><li class="sub-title"><i class="fas fa-map-marker-alt"></i>Interests</li><li>Learning from passionate teams and experienced professionals</li><li>Developing my skillset</li><li>Delivering impactful work for impactful projects</li></ul></div>
 				<div class="sub-card" id="skills"><ul><li class="sub-title"><i class="fas fa-cog"></i>Skills</li><li>Java, Python, C#</li><li>HTML, CSS, Javascript, Typescript, Pug, Django</li><li>UX Design, Developmment, and Research</li><li>Multimodal Digital Content Creation</li></div>
+				<div class="sub-card" id="background"><ul><li class="sub-title"><i class="fas fa-user"></i>Background</li><li>Professional experience in software development, content creation, and IT</li><li>Aspiring HDip in Software Design and Development</li><li>MA in Digital Cultures</li></ul></div>
+				<div class="sub-card" id="interests"><ul><li class="sub-title"><i class="fas fa-map-marker-alt"></i>Interests</li><li>Learning from passionate teams and experienced professionals</li><li>Developing my skillset</li><li>Delivering impactful work for impactful projects</li></ul></div>
 			</div>
 			
-			<div class="title">Project Showcase <span>&#x25BC;</span></div>
+			<div class="title">Projects <span>&#x25BC;</span></div>
 			
 			<div class="showcase">
 				<div class="show-title">The Moral Teachings Project</div>
 				<div><img class="show-off" src="moralteachingsproject.png"></img></div>
 				<div class="description">
-					<p>The Enseignemens Moraux (The Moral Teachings) is a poem of 113 quatrains written by Christine de Pizan at the end of 1398 or shortly after. It concerns itself with a wide variety of social ranks and ages, from craftsmen to rulers, old men and young and like much of her writing, it offering readers a vibrant picture of society at the turn of the 15th century.</p>
-					<p>This interdisciplinary project aims to bring Les Enseignemens to life in a digital form, and challenge the typical format of a digital edition through user-centric, interactive design.</p>
-					<p>The Moral Teachings project addresses a number of problems consistently found in digital editions of texts created in academic settings. In my dissertation I established that the vast majority of digital editions suffer from severe usability and accessibility issues, which could be easily avoided with the application of rudimentary user testing and by following accessibility guidelines. The Moral Teachings Project is a practical example of how those recommendations can be applied to create a vastly superior digital edition, and is currently being considered as the basis for a larger platform.</p>
-					<p>The Moral Teachings Project is currently in version 1.0. and has just launched. In the future, we will be experimenting with the creation of an API and mobile mode.</p>
-					<p>The Moral Teachings project was designed and created by Tadgh Wagstaff; the translation, analysis, and marginalia therein were written by Francesca Lundvall.</p>
-				</div>
-			</div>
-			
-			<div class="showcase"> 
-				<div class="show-title">The Virtual Galleria</div>
-				<img class="show-off" src="virtualgalleria.jpg"></img>
-				<div class="description">
-					<p>The Virtual Galleria is a sumptuous hall of tasteful fountains and neon glow shrouded in the mists of time.</p>
-					<p>We have scoured the halls of an mysterious past and found great marble gods, unreal atriums and ethereal waterworks. Every step into this place luls you further into sleep, every inch secluding you in the warmth and comfort of a time now passed. Ride the escalators and peer through the displays,
-					experience the sounds and sensations of a world both near and far to our own.</p>
+					<p>The Moral Teachings Project is an interdisciplinary project which challenges the typical and outdated format of digital editions through user-centric, interactive design.</p>
 				</div>
 			</div>
 			
@@ -63,12 +49,21 @@
 				<div class="show-title">Computus.app</div>
 				<img class="show-off" src="computusapp.jpg"></img>
 				<div class="description">
-					<p>In the year 325 a council of Bishops, no more than 295 years removed from the death of Jesus Christ, convened to forge the first documents unifying Christian doctrine. Summoned to the City of Nicaea by Roman Emperor Constantine I, the Bishops crafted the first shards of a deeper theological consensus within the Churches of Christendom.</p>
-					<p>This First Council of Nicaea produced an authoritative body of literature on Christian beliefs and settled several inter-faith debates. They also established that a majority of the council desired a church-sanctioned method of computating the date of Christ's resurrection.</p>
-					<p>Traditionally Christians relied on Jewish communities to inform them when Passover fell, as Christians observe that Christ’s crucifixion and resurrection took place over the Passover holiday. The Council of Nicaea set out two rules for the new computation: That it must be independent of the Jewish calendar, and that it must be uniformly applicable worldwide. No other details were specified.</p>
-					<p>Computus.app is an interdisciplinary collaboration between Tadgh Wagstaff, Taidgh Murray, and Dr.Jacopo Bisagni which provides access to and explanations of three such calculators: the Latercus (~4th/5th century), Dionysius Exiguus’s Easter Table (525), and Carl Friedrich Gauss’s Easter Calculator (1800)</p>
+					<p>Computus.App is an interdisciplinary project which provides learners with access to a range of tables and algorithms for the computation of easter.</p>
 				</div>
 		</div>
+			
+			<div class="showcase"> 
+				<div class="show-title">The Virtual Galleria</div>
+				<img class="show-off" src="virtualgalleria.jpg"></img>
+				<div class="description">
+					<p>The Virtual Galleria is a sumptuous hall of tasteful fountains and neon glow shrouded in the mists of time.</p>
+				</div>
+			</div>
+			
+			<footer><div>tadgh@tadghwagstaff.com</div></footer>
+			
+
 
 	</body>
 
@@ -90,13 +85,43 @@
 	margin-left: 10px;
 	}
 	
+	.bg {
+  position: fixed;
+  z-index: 1;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .9;
+  visibility: visible;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+	
 	.card {
+	z-index: 3;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
 	margin: 8.5vh 8.5vw 0 8.5vw;
-	width: 
 	max-width: 1700px;
 	background: #404040;
 	overflow: none;
@@ -107,7 +132,7 @@
 	flex-flow: row nowrap;
 	justify-content: flex-end;
 	align-items: flex-start;
-	margin: 30px 35px 40px 0;
+	margin: 30px 35px 70px 0;
 	height: 50px;
 	width: 100%;
 	font-size: 32px;
@@ -121,13 +146,12 @@
 	
 	#selfie {
 	border-radius: 100%;
-	margin-left: 70px;
+	margin: 0 0 0 60px;
 	width: 250px;
 	}
 	
 	#text-stack {
-	width: 100%;
-	margin: 40px 70px 90px 70px;
+	margin: 67px 70px 0 60px;
 	font-weight: 300;
 	}
 	
@@ -142,19 +166,20 @@
 	
 	.card-row {
 	display: flex;
-	justify-content: space-around;
-	align-items: flex-end;
+	justify-content: center;
+	flex-flow: row wrap;
 	width: 100%;
-	margin: 0 60px 80px 60px;
+	max-width: 1700px;
+	margin: 90px 60px 115px 60px;
 	}
 	
 	.sub-title, .sub-card {
-		min-width: 200px;
-		max-width: 450px;
+		margin-right: 10px;
 		font-size: 24px;
 		font-weight: 300;
-		flex-grow: 2;
-		flex-shrink: 2;
+		flex-shrink: 2; 
+		width: 420;
+		background: #696969;
 	}
 	
 	.sub-title {
@@ -166,7 +191,10 @@
 	}
 	
 	.sub-card {
-	height: 270px;
+	height: 225;
+
+	margin-bottom: 10;
+	padding: 0 20px 10px 20px;
 	font-size: 18px;
 	}
 	
@@ -192,7 +220,7 @@
 	display: flex;
 	justify-content: center;
 	flex-flow: column;
-	margin: 120px 0 100px 0;
+	margin: 50px 0 50px 0;
 	}
 	
 	.show-title {
@@ -205,9 +233,40 @@
 	}
 	
 	.show-off, .description {
-	margin: 50px 100px 10px 100px;
+	margin: 40px 100px 0 100px;
 	width: calc(100% - 200px);
 	max-width: 1700px;
+	}
+	
+	footer {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	margin: 10px 0 10px 0;
+	font-weight: 300;
+	}
+	
+	@media only screen and (max-width: 1279px) {
+	
+	#text-stack {
+		margin:40px 70px 80px 60px;
+		font-weight: 300;
+	}
+	
+	.card-row {
+		display: flex;
+		justify-content: flex-start;
+		flex-flow: row wrap;
+		width: 100%;
+		margin: 0 60px 115px 60px;
+	}
+		.sub-card {
+		width:;	
+	}
+	
+	
 	}
 
 	</style>
