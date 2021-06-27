@@ -1,8 +1,8 @@
-html lang="en-IE">
+<html lang="en-IE">
 
 	<head>
 		<meta charset="utf-8">
-		<title>Tadgh Wagstaff | Design, Development, and Creation</title>
+		<title>Tadgh Wagstaff | Design, Development, Creation</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -25,8 +25,8 @@ html lang="en-IE">
 			<div><img id="selfie" src="tadgh.jpg"></img></div>
 		
 			<div id="text-stack">
-				<div id="name">Hi, I'm Tadgh Wagstaff</div>
-				<div id="about">I'm a junior developer looking for chances to grow, learn, and advanced my career</div>
+				<div id="name">Hi, I'm Tadgh!</div>
+				<div id="about">I'm a junior developer looking for chances to build, learn, and grow</div>
 			</div>
 			
 			<div class="card-row">
@@ -34,14 +34,23 @@ html lang="en-IE">
 				<div class="sub-card" id="background"><ul><li class="sub-title"><i class="fas fa-user"></i>Background</li><li>Professional experience in software development, content creation, and IT</li><li>Aspiring HDip in Software Design and Development</li><li>MA in Digital Cultures</li></ul></div>
 				<div class="sub-card" id="interests"><ul><li class="sub-title"><i class="fas fa-map-marker-alt"></i>Interests</li><li>Learning from passionate teams and experienced professionals</li><li>Developing my skillset</li><li>Delivering impactful work for impactful projects</li></ul></div>
 			</div>
+
 			
-			<div class="title">Projects <span>&#x25BC;</span></div>
+			<div class="title">Projects</div>
 			
 			<div class="showcase">
 				<div class="show-title">The Moral Teachings Project</div>
 				<div><img class="show-off" src="moralteachingsproject.png"></img></div>
 				<div class="description">
 					<p>The Moral Teachings Project is an interdisciplinary project which challenges the typical and outdated format of digital editions through user-centric, interactive design.</p>
+				</div>
+			</div>
+			
+			<div class="showcase"> 
+				<div class="show-title">The Virtual Galleria</div>
+				<img class="show-off" src="virtualgalleria.jpg"></img>
+				<div class="description">
+					<p>The Virtual Galleria is a sumptuous hall of tasteful fountains and neon glow shrouded in the mists of time.</p>
 				</div>
 			</div>
 			
@@ -53,13 +62,7 @@ html lang="en-IE">
 				</div>
 		</div>
 			
-			<div class="showcase"> 
-				<div class="show-title">The Virtual Galleria</div>
-				<img class="show-off" src="virtualgalleria.jpg"></img>
-				<div class="description">
-					<p>The Virtual Galleria is a sumptuous hall of tasteful fountains and neon glow shrouded in the mists of time.</p>
-				</div>
-			</div>
+
 			
 			<footer><div>tadgh@tadghwagstaff.com</div></footer>
 			
@@ -75,6 +78,7 @@ html lang="en-IE">
 	padding: 0;
 	color: #f0f0f0;
 	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -101,6 +105,10 @@ html lang="en-IE">
   visibility: visible;
 }
 
+	p {
+		padding: 0 10px 0 10px;
+		}
+
 @keyframes bg-animation {
     0% { transform: translate(0,0) }
     10% { transform: translate(-5%,-5%) }
@@ -124,7 +132,7 @@ html lang="en-IE">
 	margin: 8.5vh 8.5vw 0 8.5vw;
 	max-width: 1700px;
 	background: #404040;
-	overflow: none;
+	overflow: hidden;
 	}
 	
 	#socials {
@@ -247,55 +255,169 @@ html lang="en-IE">
 	font-weight: 300;
 	}
 	
-	@media only screen and (max-width: 1279px) {
+	/* desktop break*/
+
+	@media (max-width: 1864px) {
+			#name {
+		font-size: 36px;
+		}
+		
+		#about {
+		font-size: 21px;
+		}
+		
+		.card {
+		margin: 50px 50px 0 50px;
+		}
+		
+		.sub-title, .sub-card {
+		width: 384px;
+		}
 	
-	#text-stack {
-		margin:40px 70px 80px 60px;
+		.sub-title {
+		font-size: 22px;
+		}
+	
+		.sub-card {
+		font-size: 18px;
+		}
+		
+	}
+	
+		/* laptop break */	
+		@media (max-width: 1540px) {
+		.card {
+			margin: 30px 30px 0 30px;
+		}
+		
+		.sub-title, .sub-card {
+		width: 345px;
+	}
+	
+		.sub-title {
+		font-size: 20px;
+		}
+	
+		.sub-card {
+		font-size: 16px;
+		}
+	
+		.card-row {
+		margin: 90px 30px 115px 30px;
+		}
+		
+		#name {
+		font-size: 38px;
+		}
+		
+		#about {
+		font-size: 22px;
+		}
+	 
+ /* tablet break */
+
+	@media (max-width: 1322px) {
+	
+		#selfie {
+		margin: 0 30px 0 30px;
+		width: 200px;
+		}
+	
+		#socials {
+		margin-bottom: 27px;
+		}
+	
+		#text-stack {
+		margin: 50px 20px 0 20px;
 		font-weight: 300;
 	}
 	
 	.card-row {
 		display: flex;
-		justify-content: flex-start;
+		justify-content: center;
 		flex-flow: row wrap;
-		width: 100%;
-		margin: 0 60px 115px 60px;
+		margin: 50px 30px 70px 30px;
 	}
 		.sub-card, .sub-title {
-		width:80vw;
-		margin-bottom: 20px;	
+		width:calc(100% - 100px);
+		margin: 0 50px 20px 50px;	
 	}
 	
-	}
-	
-	@media only screen and (max-width: 600px) {
-	
+		#name {
+		font-size: 30px;
+		}
 		
+		#about {
+		font-size: 17px;
+		}
+		
+		.showcase {
+		 margin: 34px 0 20px 0;
+		 } 
+	 
+	 .title {
+	 	font-size: 22px;
+	 	}
+	 	
+	 .show-off, .description {
+	 	margin: 24px 60px 0 60px;
+	 	width: calc(100% - 120px);
+	 
+	}
+	/* phone break */
+
+	@media (max-width: 915px) {		
+
+	#socials {
+		margin: 18px 0 30px 0;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.bg {
+		display: none;
+		}
+
+	.card {
+		margin: 0;
+		padding: 0;
+		justify-content: center;
+		align-items: center;
+	}
+	
+		#selfie {
+		margin: 0;
+		width: 200px;
+		}
+	
+		#text-stack {
+		margin: 0 20px 0 20px;
+		font-weight: 300;
+	}
 	
 		.sub-card, .sub-title {
 		width:80vw;
-		margin-bottom: 20px;	
+		margin: 0 0 10px 0;	
 	}
 	
 		.sub-card {
-			height: 275px;
+			height: 250px;
 		}
-		
-		#socials {
-	margin: 30px 50px 70px 50px ;
-	}
-	
-	.card {
-	margin: 0;
-	justify-content: center;
-	}
 	
 		#selfie {
 		margin: 0;
 	}
 	
+		 .show-off, .description {
+	 	margin: 24px 10px 0 10px;
+	 	width: calc(100% - 20px);
+	 
+	}
+} 
+
 	
- } 
+
+	
 
 	</style>
 </html>
