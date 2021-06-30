@@ -8,11 +8,10 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/1e5e4e4061.js" crossorigin="anonymous"></script>
 	</head>
+	
 	<body>
 		
-		<div class="bg"></div>
-		
-		<div class="card">
+		<div id="content">
 		
 			<div id="socials">
 				<a href="https://github.com/TadghW"><i class="fab fa-github"></i></a>
@@ -22,17 +21,19 @@
 				<a href="mailto: tadgh@pictureandword.com"><i class="fas fa-envelope"></i></a>
 			</div>
 			
-			<div><img id="selfie" src="tadgh.jpg"></img></div>
-		
-			<div id="text-stack">
-				<div id="name">Hi, I'm Tadgh!</div>
-				<div id="about">I'm a junior developer looking for chances to build, learn, and grow</div>
-			</div>
+			<div id="intro">
+				<img id="selfie" src="tadgh.jpg"></img>
 			
+				<div id="text-stack">
+					<div id="name">Hi, I'm Tadgh!</div>
+					<div id="about">I'm a Galway-based junior developer and technology enthusiast with UX credentials and experience in a range of professional software development roles.</div>
+				</div>
+			</div>
+				
 			<div class="card-row">
-				<div class="sub-card" id="skills"><ul><li class="sub-title"><i class="fas fa-cog"></i>Skills</li><li>Java, Python, C#</li><li>HTML, CSS, Javascript, Typescript, Pug, Django</li><li>UX Design, Developmment, and Research</li><li>Multimodal Digital Content Creation</li></div>
-				<div class="sub-card" id="background"><ul><li class="sub-title"><i class="fas fa-user"></i>Background</li><li>Professional experience in software development, content creation, and IT</li><li>Aspiring HDip in Software Design and Development</li><li>MA in Digital Cultures</li></ul></div>
-				<div class="sub-card" id="interests"><ul><li class="sub-title"><i class="fas fa-map-marker-alt"></i>Interests</li><li>Learning from passionate teams and experienced professionals</li><li>Developing my skillset</li><li>Delivering impactful work for impactful projects</li></ul></div>
+				<div class="subcard" id="skills"><ul><li class="sub-title"><i class="fas fa-cog"></i>Skills</li><li>Java, Python, C#</li><li>HTML, CSS, Javascript, Typescript, Pug, Django</li><li>UX, User Testing and User Research</li><li>Multimodal Digital Content Creation</li></div>
+				<div class="subcard" id="background"><ul><li class="sub-title"><i class="fas fa-user"></i>Background</li><li>Professional experience in software development, content creation, and IT</li><li>Aspiring HDip in Software Design and Development</li><li>MA in Digital Cultures</li></ul></div>
+				<div class="subcard" id="interests"><ul><li class="sub-title"><i class="fas fa-map-marker-alt"></i>Interests</li><li>Learning from passionate teams and experienced professionals</li><li>Developing my skillset</li><li>Delivering impactful work for impactful projects</li></ul></div>
 			</div>
 
 			
@@ -40,7 +41,7 @@
 			
 			<div class="showcase">
 				<div class="show-title">The Moral Teachings Project</div>
-				<div><img class="show-off" src="moralteachingsproject.png"></img></div>
+				<img class="show-off" src="moralteachingsproject.png"></img>
 				<div class="description">
 					<p>The Moral Teachings Project is an interdisciplinary project which challenges the typical and outdated format of digital editions through user-centric, interactive design.</p>
 				</div>
@@ -60,6 +61,7 @@
 				<div class="description">
 					<p>Computus.App is an interdisciplinary project which provides learners with access to a range of tables and algorithms for the computation of easter.</p>
 				</div>
+				
 		</div>
 			
 
@@ -71,351 +73,250 @@
 	</body>
 
 	<style>
+/*I use a combinations of rem, vw/h, and calc() for most UI elements to handle unexpected resolutions. Avoids hyper-mediaquery-itis*/	
+
+/*Beware that some of these properties are not supported by <IE10 or super-lightweight browsers*/	
 	
+/*I declare important values as variables in root for easy/clean modification in media queries*/
+
+/*When I write CSS I assume users will access it on devices of a width of down to 280px - the width of the smallest commercially available phone screen*/
+
+
+	:root {
+	--content-width: 97.5vw;
+	--content-margin: 0 calc((100vw - var(--content-width)) / 2) 0 calc((100vw - var(--content-width)) / 2);
+	--showcase-margin: 0 calc(calc((100vw - var(--content-width)) / 2) * 2) 30px calc(calc((100vw - var(--content-width)) / 2) * 2 );
+	--socials-size: 1.75rem;
+	--socials-margin: 1.75rem;
+	--font-size-one: 1.8rem;
+	--font-size-one-and-a-bit: 1.4rem;
+	--font-size-two: 1.20rem;
+	--font-size-three: 0.9rem;
+	--selfie-width: 13rem;
+	--text-stack-width: calc(var(--content-width) * 0.95);
+	--text-stack-margin: 1.50rem 0 2.5rem 0;
+	--name-bottom-margin: 10px;
+	--title-margin: 2.2rem 0 1rem 0;
+	--subcard-width: ;
+	--subcard-margin: 0 2px 10px 2px; 
+	--subcard-padding: 1px 17px 9 18px;
+		font-size: 14px;;
+		background: #404040;
+		color: #f0f0f0;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		overflow-x: hidden;
+	}
+
 	body {
-	background: #000;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
 	margin: 0;
 	padding: 0;
-	color: #f0f0f0;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
+	}
+
+	#content {
 	display: flex;
+	flex-flow: column nowrap;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
+	width: var(--content-width);
 	}
 	
-	span {
-	font-size: 16px;
-	margin-left: 10px;
-	}
-	
-	.bg {
-  position: fixed;
-  z-index: 1;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-  background-repeat: repeat;
-  animation: bg-animation .2s infinite;
-  opacity: .9;
-  visibility: visible;
-}
-
-	p {
-		padding: 0 10px 0 10px;
-		}
-
-@keyframes bg-animation {
-    0% { transform: translate(0,0) }
-    10% { transform: translate(-5%,-5%) }
-    20% { transform: translate(-10%,5%) }
-    30% { transform: translate(5%,-10%) }
-    40% { transform: translate(-5%,15%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(15%,0) }
-    70% { transform: translate(0,10%) }
-    80% { transform: translate(-15%,0) }
-    90% { transform: translate(10%,5%) }
-    100% { transform: translate(5%,0) }
-}
-	
-	.card {
-	z-index: 3;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
-	align-items: flex-start;
-	margin: 8.5vh 8.5vw 0 8.5vw;
-	max-width: 1700px;
-	background: #404040;
-	overflow: hidden;
+	i {
+	margin: 5px 5px 5px 0;
 	}
 	
 	#socials {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-end;
-	align-items: flex-start;
-	margin: 30px 35px 70px 0;
-	height: 50px;
-	width: 100%;
-	font-size: 32px;
+	margin: var(--socials-margin) 0 calc(var(--socials-margin) * 0.95) 0;
+	font-size: var(--socials-size);
 	}
 	
 	#socials a {
 	text-decoration: none;
-	color: #fff;
-	margin: 10px;
+	color: #f0f0f0;
+	}
+	
+	#intro {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	}
 	
 	#selfie {
-	border-radius: 100%;
-	margin: 0 0 0 60px;
-	width: 250px;
+	width: var(--selfie-width);
+	border-radius: 100%
 	}
 	
 	#text-stack {
-	margin: 67px 70px 0 60px;
-	font-weight: 300;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: var(--text-stack-width);
+	margin: var(--text-stack-margin);
 	}
 	
 	#name {
-	font-size: 42px;
+	font-size: var(--font-size-one);
+	margin-bottom: var(--name-bottom-margin);
 	}
 	
 	#about {
-	margin-top: 10px;
-	font-size: 24px;
+	font-size: var(--font-size-three);
+	}
+
+	.subcard {
+	background: #808080;
+	margin: var(--subcard-margin);
+	padding: var(--subcard-padding);
+	font-size: var(--font-size-three);
+	width: var(--subcard-width);
 	}
 	
-	.card-row {
-	display: flex;
-	justify-content: center;
-	flex-flow: row wrap;
-	width: 100%;
-	max-width: 1700px;
-	margin: 90px 60px 115px 60px;
+	.subcard ul {
+	list-style: none;
+	padding: 0;
 	}
 	
-	.sub-title, .sub-card {
-		margin-right: 10px;
-		font-size: 24px;
-		font-weight: 300;
-		flex-shrink: 2; 
-		width: 420;
-		background: #696969;
+	.subcard li {
+	margin: 10px 0 0 0;
 	}
 	
 	.sub-title {
-		margin-bottom: 20px;
-		}
-	
-	.sub-title	i {
-		margin-right: 10px;
-	}
-	
-	.sub-card {
-	height: 225px;
+	width: var(--subcard-width);
+	font-size: var(--font-size-two);
 	margin-bottom: 10px;
-	padding: 0 20px 10px 20px;
-	font-size: 18px;
-	}
-	
-	ul {
-	 padding: 0;
-	}
-	
-	li {
-	 margin-top: 10px;
-	 list-style: none;
 	}
 	
 	.title {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 26px;
-	font-weight: 300;
+	font-size: var(--font-size-one-and-a-bit);
+	margin: var(--title-margin);
 	}
 	
 	.showcase {
+	width: var(--content-margin);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	flex-flow: column;
-	margin: 50px 0 50px 0;
+	margin-bottom: 25px;
+	}
+	
+	.show-off {
+	width: var(--content-width);
 	}
 	
 	.show-title {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 20px;
-	font-weight: 300;
-	}
-	
-	.show-off, .description {
-	margin: 40px 100px 0 100px;
-	width: calc(100% - 200px);
-	max-width: 1700px;
-	}
-	
-	footer {
-	display: flex;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	height: 60px;
-	margin: 10px 0 10px 0;
-	font-weight: 300;
-	}
-	
-	/* desktop break*/
+	font-size: var(--font-size-two);
+	text-align: center;
+	margin-bottom: 20px;
+}
 
-	@media (max-width: 1864px) {
-			#name {
-		font-size: 36px;
-		}
-		
-		#about {
-		font-size: 21px;
-		}
-		
-		.card {
-		margin: 50px 50px 0 50px;
-		}
-		
-		.sub-title, .sub-card {
-		width: 384px;
-		}
-	
-		.sub-title {
-		font-size: 22px;
-		}
-	
-		.sub-card {
-		font-size: 18px;
-		}
-		
+	.description {
+	text-align: center;
 	}
-	
-		/* laptop break */	
-		@media (max-width: 1540px) {
-		.card {
-			margin: 30px 30px 0 30px;
-		}
-		
-		.sub-title, .sub-card {
-		width: 345px;
-	}
-	
-		.sub-title {
-		font-size: 20px;
-		}
-	
-		.sub-card {
-		font-size: 16px;
-		}
-	
-		.card-row {
-		margin: 90px 30px 115px 30px;
-		}
-		
-		#name {
-		font-size: 38px;
-		}
-		
-		#about {
-		font-size: 22px;
-		}
-	 
- /* tablet break */
 
-	@media (max-width: 1322px) {
+
+	/*Media queries are essential for a range of devices, but the increasing adoption of window tiling softwares makes responsive design important even for desktop apps, IMO*/
+
+	/*Small phone break*/
 	
-		#selfie {
-		margin: 0 30px 0 30px;
-		width: 200px;
-		}
+	@media (min-width: 310px) {
 	
-		#socials {
-		margin-bottom: 27px;
-		}
-	
-		#text-stack {
-		margin: 50px 20px 0 20px;
-		font-weight: 300;
+	:root {
+	font-size: 15px;
 	}
 	
-	.card-row {
-		display: flex;
-		justify-content: center;
-		flex-flow: row wrap;
-		margin: 50px 30px 70px 30px;
 	}
-		.sub-card, .sub-title {
-		width:calc(100% - 100px);
-		margin: 0 50px 20px 50px;	
+
+	/*Medium mobile break*/
+	@media (min-width: 370px) {
+	
+	:root {
+	--content-width: 95vw;
+	font-size: 16px;
+	}
+
 	}
 	
-		#name {
-		font-size: 30px;
+	/*Small tablet or desktop tiles break, last truly "mobile" layout*/
+	@media (min-width: 600px) {
+	
+	:root {
+	--content-width: 75vw;
+	font-size: 18px;
+	}
+	
+	
+	/*Big tablet and tile break, first layout switch*/
+	@media (min-width: 960px) {
+	
+ 	:root {
+ 	--content-width: 90vw;
+ 	--subcard-width: 27vw;
+ 	--text-stack-width: 50vw;
+	 --text-stack-margin: 3rem 0 2.5rem 0;
+	 --font-size-one: 1.7rem;
+	 --font-size-two: 1.1rem;
+	 --font-size-three: 0.9rem;
+	 --subcard-width: calc(var(--content-width) * 0.9);
+	 --subcard-margin:  0 2px 20px 2px;
+	 --subcard-padding: 5px 17px 13px 28px;
+		 font-size: 19px;
 		}
-		
-		#about {
-		font-size: 17px;
-		}
-		
-		.showcase {
-		 margin: 34px 0 20px 0;
-		 } 
+ 
+	 #intro {
+	 flex-direction: row;
+	 justify-content: flex-start;
+	 margin: 0 0 4rem 0;
+	 }
 	 
-	 .title {
-	 	font-size: 22px;
+	 #text-stack {
+	 margin: 1.50rem 3rem 2.5rem 3rem;
+	 }
+	 
+	 #socials {
+	 display: flex;
+	 width: var(--content-width);
+	 flex-direction: row;
+	 justify-content: flex-end;
+
+	 }
+	 
+	 #socials a {
+	 	 margin: 0 5px 0 5px;
 	 	}
-	 	
-	 .show-off, .description {
-	 	margin: 24px 60px 0 60px;
-	 	width: calc(100% - 120px);
+
+}
+
+/*Laptop screen break (1366p+)*/
+ @media (min-width: 1330px) {
+ 
+	:root {
+	--content-width: 95vw;
+	--selfie-width: 13.5rem;
+	--subcard-width: ;
+	--subcard-margin: 0 0.25rem 1rem 0.25rem;
+	--font-size-two: 1.2rem;
+	--font-size-three: 0.7rem;
+		font-size: 22px;
+		}
+		
+	.card-row {
+	display: flex;
+	}
+	
+	.subcard {
+	flex: 1;
+	}
+
 	 
-	}
-	/* phone break */
-
-	@media (max-width: 915px) {		
-
-	#socials {
-		margin: 18px 0 30px 0;
-		justify-content: center;
-		align-items: center;
-	}
-	
-	.bg {
-		display: none;
-		}
-
-	.card {
-		margin: 0;
-		padding: 0;
-		justify-content: center;
-		align-items: center;
-	}
-	
-		#selfie {
-		margin: 0;
-		width: 200px;
-		}
-	
-		#text-stack {
-		margin: 0 20px 0 20px;
-		font-weight: 300;
-	}
-	
-		.sub-card, .sub-title {
-		width:80vw;
-		margin: 0 0 10px 0;	
-	}
-	
-		.sub-card {
-			height: 250px;
-		}
-	
-		#selfie {
-		margin: 0;
-	}
-	
-		 .show-off, .description {
-	 	margin: 24px 10px 0 10px;
-	 	width: calc(100% - 20px);
 	 
-	}
-} 
-
-	
 
 	
 
