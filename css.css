@@ -1,0 +1,290 @@
+/*I use a combinations of rem, vw/h, and calc() for most UI elements to handle unexpected resolutions. Avoids hyper-mediaquery-itis*/	
+
+/*Beware that some of these properties are not supported by <IE10 or super-lightweight browsers*/	
+	
+/*I declare important values as variables in root for easy/clean modification in media queries*/
+
+/*When I write CSS I assume users will access it on devices of a width of down to 280px - the width of the smallest commercially available phone screen*/
+
+
+	:root {
+	--content-width: 97.5vw;
+	--content-margin: 0 calc((100vw - var(--content-width)) / 2) 0 calc((100vw - var(--content-width)) / 2);
+	--showcase-margin: 0 calc(calc((100vw - var(--content-width)) / 2) * 2) 30px calc(calc((100vw - var(--content-width)) / 2) * 2 );
+	--socials-size: 1.75rem;
+	--socials-margin: 1.75rem;
+	--font-size-one: 1.8rem;
+	--font-size-one-and-a-bit: 1.4rem;
+	--font-size-two: 1.20rem;
+	--font-size-three: 0.9rem;
+	--intro-width: ;
+	--intro-margin: ;
+	--selfie-width: 13rem;
+	--text-stack-width: calc(var(--content-width) * 0.95);
+	--text-stack-margin: 1.50rem 0 2.5rem 0;
+	--name-bottom-margin: 10px;
+	--title-margin: 2.2rem 0 1rem 0;
+	--subcard-width: ;
+	--subcard-margin: 0 2px 10px 2px; 
+	--subcard-padding: 1px 17px 9 18px;
+	--showcase-width: calc(var(--content-width) * 0.9);
+	--showoff-width: calc(var(--content-width) * 0.8);
+	--showoff-margin: 0 calc((var(--content-width) - (var(--content-width) * 0.8)) / 2) 0 calc((var(--content-width) - (var(--content-width) * 0.8)) / 2);
+		font-size: 14px;;
+		background: #404040;
+		color: #f0f0f0;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		overflow-x: hidden;
+	}
+
+	body {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	}
+
+	#content {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	width: var(--content-width);
+	}
+	
+	i {
+	margin: 5px 5px 5px 0;
+	}
+	
+	#socials {
+	margin: var(--socials-margin) 0 calc(var(--socials-margin) * 0.95) 0;
+	font-size: var(--socials-size);
+	}
+	
+	#socials a {
+	text-decoration: none;
+	color: #f0f0f0;
+	}
+	
+	#intro {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: var(--intro-width);
+	margin: var(--intro-margin);
+	}
+	
+	#selfie {
+	width: var(--selfie-width);
+	border-radius: 100%
+	}
+	
+	#text-stack {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: var(--text-stack-width);
+	margin: var(--text-stack-margin);
+	}
+	
+	#name {
+	font-size: var(--font-size-one);
+	margin-bottom: var(--name-bottom-margin);
+	}
+	
+	#about {
+	font-size: var(--font-size-three);
+	}
+
+	.subcard {
+	background: #808080;
+	margin: var(--subcard-margin);
+	padding: var(--subcard-padding);
+	font-size: var(--font-size-three);
+	width: var(--subcard-width);
+	}
+	
+	.subcard ul {
+	list-style: none;
+	padding: 0;
+	}
+	
+	.subcard li {
+	margin: 10px 0 0 0;
+	}
+	
+	.sub-title {
+	width: var(--subcard-width);
+	font-size: var(--font-size-two);
+	margin-bottom: 10px;
+	}
+	
+	.title {
+	font-size: var(--font-size-one-and-a-bit);
+	margin: var(--title-margin);
+	}
+	
+	.showcase {
+	font-size: var(--font-size-three);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 25px;
+	}
+	
+	.show-off {
+	width: calc(var(--content-width) * 0.8);
+	margin: var(--showoff-margin);
+	}
+	
+	.show-title {
+	font-size: var(--font-size-two);
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+	.description {
+	text-align: center;
+	}
+	
+	footer {
+	font-size: var(--font-size-three);
+	}
+
+
+	/*Media queries are essential for a range of devices, but the increasing adoption of window tiling softwares makes responsive design important even for desktop apps, IMO*/
+
+	/*Small phone break*/
+	
+	@media (min-width: 310px) {
+	
+	:root {
+	font-size: 15px;
+	}
+	
+	}
+
+	/*Medium mobile break*/
+	@media (min-width: 370px) {
+	
+	:root {
+	--content-width: 95vw;
+	font-size: 16px;
+	}
+
+	}
+	
+	/*Small tablet or desktop tiles break, last truly "mobile" layout*/
+	@media (min-width: 600px) {
+	
+	:root {
+	--content-width: 75vw;
+	font-size: 18px;
+	}
+	
+	
+	/*Big tablet and tile break, first layout switch*/
+	@media (min-width: 960px) {
+	
+ 	:root {
+ 	--content-width: 90vw;
+ 	--subcard-width: 27vw;
+ 	--intro-margin: 0 0 4rem 0;
+ 	--text-stack-width: 50vw;
+	 --text-stack-margin: 1.50rem 3rem 2.5rem 3rem;
+	 --font-size-one: 1.7rem;
+	 --font-size-two: 1.1rem;
+	 --font-size-three: 0.9rem;
+	 --subcard-width: calc(var(--content-width) * 0.9);
+	 --subcard-margin:  0 2px 20px 2px;
+	 --subcard-padding: 5px 17px 13px 28px;
+		 font-size: 19px;
+		}
+ 
+	 #intro {
+	 flex-direction: row;
+	 justify-content: flex-start;
+	 }
+	 
+	 #socials {
+	 display: flex;
+	 width: var(--content-width);
+	 flex-direction: row;
+	 justify-content: flex-end;
+
+	 }
+	 
+	 #socials a {
+	 	 margin: 0 5px 0 5px;
+	 	}
+
+}
+
+/*Laptop screen break (1330+)*/
+ @media (min-width: 1330px) {
+ 
+	:root {
+	--content-width: 95vw;
+	--selfie-width: 13.5rem;
+	--subcard-width: ;
+	--subcard-margin: 0 0.25rem 1rem 0.25rem;
+	--font-size-two: 1.15rem;
+	--font-size-three: 0.7rem;
+		font-size: 22px;
+		}
+		
+	.card-row {
+	display: flex;
+	}
+	
+	.subcard {
+	flex: 1;
+	}
+
+/*Desktop screen break (1510p+)*/
+@media (min-width: 1510px) {
+
+	:root {
+	--text-stack-margin: 1.50rem 3rem 3rem 3rem;
+	--content-width: 80vw;
+	--title-margin: 2.6rem 0 1.2rem 0;
+	--font-size-one-and-a-bit: 1.3rem;
+	}
+	
+/*Full desktop screen break (1700+)*/
+@media (min-width: 1700px) {
+
+	:root {
+	--content-width: 75vw; 
+	--intro-width: 65vw;
+	--font-size-two: 1rem;
+	font-size: 24px;
+	}
+	
+/*2K (2200+)*/
+@media (min-width: 2200px) {
+
+	:root {
+	--content-width: 70vw; 
+	--intro-width: 55vw;
+	--font-size-two: 1rem;
+	--intro-margin: 0.5rem 3rem 3rem 3rem;
+	font-size: 29px;
+	}
+	
+/*4K (2900+)*/
+@media (min-width: 2900px) {
+
+	:root {
+	--content-width: 60vw;
+	--intro-width: 50vw;
+	font-size: 36px;
+	
+}
