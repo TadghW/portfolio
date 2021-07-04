@@ -9,7 +9,6 @@
 
 	:root {
 	--content-width: 97.5vw;
-	--content-margin: /*0 calc((100vw - var(--content-width)) / 2) 0 calc((100vw - var(--content-width)) / 2)*/;
 	--showcase-margin: 0 calc(calc((100vw - var(--content-width)) / 2) * 2) 30px calc(calc((100vw - var(--content-width)) / 2) * 2 );
 	--socials-size: 1.75rem;
 	--socials-margin: 1.75rem;
@@ -25,7 +24,7 @@
 	--name-bottom-margin: 10px;
 	--title-margin: 2.2rem 0 1rem 0;
 	--subcard-width: calc(var(--content-width) * 0.9);
-	--subcard-margin: 0 0 10px calc((100vw - var(--subcard-width)) / 4);
+	--subcard-margin: 0 0 10px 0;
 	--subcard-padding: 1px 17px 9 18px;
 	--showcase-width: calc(var(--content-width) * 0.95);
 	--showoff-width: calc(var(--content-width) * 0.95);
@@ -36,6 +35,7 @@
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 300;
 		overflow-x: hidden;
+		transition: all 2s ease-in-out 0;
 	}
 	
 	html {
@@ -148,7 +148,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-bottom: 25px;
+	margin-bottom: 2rem;
 	}
 	
 	.show-off {
@@ -209,7 +209,7 @@
  	:root {
  	--content-width: 90vw;
  	--intro-margin: 0 0 4rem 0;
- 	--text-stack-width: 50vw;
+ 	--text-stack-width: 40vw;
 	 --text-stack-margin: 1.50rem 3rem 2.5rem 3rem;
 	 --font-size-one: 1.7rem;
 	 --font-size-two: 1.1rem;
@@ -243,11 +243,11 @@
  
 	:root {
 	--content-width: 95vw;
-	--selfie-width: 13.5rem;
+	--text-stack-margin: 1.25rem 3rem 3rem 3rem;
+	--selfie-width: 13rem;
 	--subcard-margin: 0 0.25rem 1rem 0.25rem;
-	--font-size-two: 1.15rem;
-	--font-size-three: 0.7rem;
-		font-size: 22px;
+	--title-margin: 3.5rem 0 1.2rem 0;
+		font-size: 21px;
 		}
 		
 	.card-row {
@@ -266,9 +266,7 @@
 @media (min-width: 1510px) {
 
 	:root {
-	--text-stack-margin: 1.50rem 3rem 3rem 3rem;
 	--content-width: 80vw;
-	--title-margin: 2.6rem 0 1.2rem 0;
 	--font-size-one-and-a-bit: 1.3rem;
 	}
 
@@ -291,8 +289,8 @@
 	--content-width: 62vw; 
 	--intro-width: 50vw;
 	--font-size-two: 1rem;
-	--intro-margin: 0.55rem 3rem 3rem 3rem;
-	font-size: 27px;
+	--intro-margin: 1rem 3rem 3.5rem 3rem;
+	font-size: 26px;
 	}
 
 }	
@@ -300,9 +298,9 @@
 @media (min-width: 2900px) {
 
 	:root {
-	--content-width: 60vw;
+	--content-width: min(60vw, 2100px);
 	--intro-width: 50vw;
-	font-size: 36px;
+	font-size: 32px;
 	
 }
 }
