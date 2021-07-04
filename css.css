@@ -1,306 +1,217 @@
-/*I use a combinations of rem, vw/h, and calc() for most UI elements to handle unexpected resolutions. Avoids hyper-mediaquery-itis*/	
-
-/*Beware that some of these properties are not supported by <IE10 or super-lightweight browsers*/	
-	
-/*I declare important values as variables in root for easy/clean modification in media queries*/
-
-/*When I write CSS I assume users will access it on devices of a width of down to 280px - the width of the smallest commercially available phone screen*/
-
-
-	:root {
-	--content-width: 97.5vw;
-	--showcase-margin: 0 calc(calc((100vw - var(--content-width)) / 2) * 2) 30px calc(calc((100vw - var(--content-width)) / 2) * 2 );
-	--socials-size: 1.75rem;
-	--socials-margin: 1.75rem;
-	--font-size-one: 1.8rem;
-	--font-size-one-and-a-bit: 1.4rem;
-	--font-size-two: 1.20rem;
-	--font-size-three: 0.9rem;
-	--intro-width: ;
-	--intro-margin: ;
-	--selfie-width: 13rem;
-	--text-stack-width: calc(var(--content-width) * 0.95);
-	--text-stack-margin: 1.50rem 0 2.5rem 0;
-	--name-bottom-margin: 10px;
-	--title-margin: 2.2rem 0 1rem 0;
-	--subcard-width: calc(var(--content-width) * 0.9);
-	--subcard-margin: 0 0 10px 0;
-	--subcard-padding: 1px 17px 9 18px;
-	--showcase-width: calc(var(--content-width) * 0.95);
-	--showoff-width: calc(var(--content-width) * 0.95);
-	--showoff-margin: 0 calc((var(--content-width) - var(--showoff-width)) / 2) 0 calc((var(--content-width) - var(--showoff-width)) / 2);
-		font-size: 14px;;
-		background: #404040;
-		color: #f0f0f0;
-		font-family: 'Open Sans', sans-serif;
-		font-weight: 300;
-		overflow-x: hidden;
-		transition: all 2s ease-in-out 0;
-	}
-	
-	html {
-	width: 100vw;
-	}
-
-	body {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-	padding: 0;
-	width: 100vw;
-	}
-
-	#content {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: center;
-	width: var(--content-width);
-	margin: var(--content-margin);
-	}
-	
-	i {
-	margin: 5px 5px 5px 0;
-	}
-	
-	#socials {
-	margin: var(--socials-margin) 0 calc(var(--socials-margin) * 0.95) 0;
-	font-size: var(--socials-size);
-	}
-	
-	#socials a {
-	text-decoration: none;
-	color: #f0f0f0;
-	}
-	
-	#intro {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: var(--intro-width);
-	margin: var(--intro-margin);
-	}
-	
-	#selfie {
-	width: var(--selfie-width);
-	border-radius: 100%
-	}
-	
-	#text-stack {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	width: var(--text-stack-width);
-	margin: var(--text-stack-margin);
-	}
-	
-	#name {
-	font-size: var(--font-size-one);
-	margin-bottom: var(--name-bottom-margin);
-	}
-	
-	#about {
-	font-size: var(--font-size-three);
-	}
-	
-	.card-row {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	}
-
-	.subcard {
-	background: #808080;
-	margin: var(--subcard-margin);
-	padding: var(--subcard-padding);
-	font-size: var(--font-size-three);
-	width: var(--subcard-width);
-	}
-	
-	.subcard ul {
-	width: ;
-	list-style: none;
-	padding: 0;
-	}
-	
-	.subcard li {
-	margin: 10px 0 0 0;
-	}
-	
-	.sub-title {
-	font-size: var(--font-size-two);
-	margin-bottom: 10px;
-	}
-	
-	.title {
-	font-size: var(--font-size-one-and-a-bit);
-	margin: var(--title-margin);
-	}
-	
-	.showcase {
-	font-size: var(--font-size-three);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-bottom: 2rem;
-	}
-	
-	.show-off {
-	width: var(--showoff-width);
-	margin: var(--showoff-margin);
-	}
-	 
-	.show-title {
-	font-size: var(--font-size-two);
-	text-align: center;
-	margin-bottom: 20px;
+:root {
+background: #404040;
+color: #f0f0f0;
+font-family: 'Open Sans', sans-serif;
+font-weight: 300;
+font-size: 16px;
+display: flex;
+flex-direction: column;
+align-items: center;
+overflow-x: hidden;
+--body-width: 97.5vw;
+--body-margin: 0 calc( (100vw - var(--body-width)) / 2) 0 calc( (100vw - var(--body-width)) / 2);
 }
 
-	.description {
-	text-align: center;
-	}
-	
-	footer {
-	font-size: var(--font-size-three);
-	}
+body {
+margin: var(--body-margin);
+padding: 0;
+}
 
+#socials {
+text-align: center;
+font-size: 2rem;
+margin: 2rem;
+}
 
-	/*Media queries are essential for a range of devices, but the increasing adoption of window tiling softwares makes responsive design important even for desktop apps, IMO*/
+#socials a {
+text-decoration: none;
+color: #f0f0f0;
+}
 
-	/*Small phone break*/
-	
-	@media (min-width: 310px) {
-	
-	:root {
-	font-size: 15px;
-	
+i {
+	margin: 0.5rem;
 	}
 	
-	}
+#intro {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 2.5rem;
+}
 
-	/*Medium mobile break*/
-	@media (min-width: 370px) {
-	
-	:root {
-	--content-width: 95vw;
-	font-size: 16px;
-	}
+#selfie {
+border-radius: 100%;
+width: 200px;
+}
 
-	}
-	
-	/*Small tablet or desktop tiles break, last truly "mobile" layout*/
-	@media (min-width: 600px) {
-	
-	:root {
-	--content-width: 75vw;
-	font-size: 18px;
-	}
-	
-	}
-	/*Big tablet and tile break, first layout switch*/
-	@media (min-width: 885px) {
-	
- 	:root {
- 	--content-width: 90vw;
- 	--intro-margin: 0 0 4rem 0;
- 	--text-stack-width: 40vw;
-	 --text-stack-margin: 1.50rem 3rem 2.5rem 3rem;
-	 --font-size-one: 1.7rem;
-	 --font-size-two: 1.1rem;
-	 --font-size-three: 0.9rem;
-	 --subcard-margin:  0 2px 20px 2px;
-	 --subcard-padding: 5px 17px 13px 28px;
-		 font-size: 19px;
-		}
- 
-	 #intro {
-	 flex-direction: row;
-	 justify-content: flex-start;
-	 }
-	 
-	 #socials {
-	 display: flex;
-	 width: var(--content-width);
-	 flex-direction: row;
-	 justify-content: flex-end;
+#text-stack {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 85%;
+}
 
-	 }
-	 
-	 #socials a {
-	 	 margin: 0 5px 0 5px;
-	 	}
+#intro h1 {
+font-size: 2rem;
+font-weight: 300;
+margin: 1.75rem 0 0.5rem 0;
+}
+
+#intro p {
+text-align: center;
+font-size: 1rem;
+margin: 0;
+}
+
+#card-row{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.subcard{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin: 0 0 7.5px 0;
+padding: 15px 20px 25px 20px;
+background: #808080;
+}
+
+h3 {
+font-size: 1.3rem;
+font-weight: 300;
+text-align: center;
+margin: 0 0 1rem 0;
+}
+
+.subcard h3 {
+text-align: left;
+margin: 0 0 0.75rem 0;
+}
+
+.subcard li {
+list-style: none;
+margin:  0 0.125rem 0.75rem;
+}
+
+.showcase {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+margin: 0 0 1.5rem 0;
+}
+
+h2 {
+font-size: 1.75rem;
+font-weight: 300;
+text-align: center;
+margin:3rem 0 1.5rem 0;
+}
+
+.project-image {
+max-width: calc( var(--body-width) * 0.95);
+}
+
+footer {
+text-align: center;
+margin-top: 3rem;
+}
+
+@media (min-width: 600px) {
+
+#socials {
+display: flex;
+justify-content: flex-end;
+}
+
+#intro {
+flex-direction: row;
+justify-content: space-around;
+margin-top: 1rem;
+}
+
+#text-stack {
+width: 60%;
+margin-top: -60px;
+}
+}
+
+@media (min-width: 1000px) {
+
+#selfie {
+width: 225px;
+}
+
+#text-stack {
+margin-top: -70px;
+}
+
+.card-row {
+display: flex;
+flex-direction: row;
+}
+
+.subcard {
+flex: 1;
+margin: 5px 2.5px 0 2.5px;
+}
+
+h2 {
+margin-top: 4rem;
+}
+}
+
+@media (min-width: 1100px) {
+:root {
+--body-width: 85vw;
+}
+}
+
+@media (min-width: 1225px) {
+
+:root {
+font-size: 18px;
+}
+
+#selfie {
+width: 275px;
+}
+
+#intro {
+margin-top: 3rem;
+}
 
 }
 
-/*Laptop screen break (1330+)*/
- @media (min-width: 1330px) {
- 
-	:root {
-	--content-width: 95vw;
-	--text-stack-margin: 1.25rem 3rem 3rem 3rem;
-	--selfie-width: 13rem;
-	--subcard-margin: 0 0.25rem 1rem 0.25rem;
-	--title-margin: 3.5rem 0 1.2rem 0;
-		font-size: 21px;
-		}
-		
-	.card-row {
-	flex-flow: row wrap;
-	align-items: stretch;
-	justify-content: center;
-	}
-	
-	.subcard {
-	flex: 1;
-	}
+@media (min-width: 1500px) {
+
+:root {
+font-size: 20px;
+}
+}
+
+@media (min-width: 2050px) {
+
+:root {
+font-size: 22px;
+--body-width: 65vw;
+}
+
+.project-image {
+max-width: calc( var(--body-width) * 0.7);
+}
+
+.card-row {
+margin-top: 4rem;
+}
+
+.showcase {
+margin: 0 0 2.5rem 0;
+}
 
 }
 
-/*Desktop screen break (1510p+)*/
-@media (min-width: 1510px) {
 
-	:root {
-	--content-width: 80vw;
-	--font-size-one-and-a-bit: 1.3rem;
-	}
 
-}	
-/*Full desktop screen break (1700+)*/
-@media (min-width: 1700px) {
-
-	:root {
-	--content-width: 75vw; 
-	--intro-width: 65vw;
-	--font-size-two: 1rem;
-	font-size: 24px;
-	}
-
-}	
-/*2K (2200+)*/
-@media (min-width: 2200px) {
-
-	:root {
-	--content-width: 62vw; 
-	--intro-width: 50vw;
-	--font-size-two: 1rem;
-	--intro-margin: 1rem 3rem 3.5rem 3rem;
-	font-size: 26px;
-	}
-
-}	
-/*4K (2900+)*/
-@media (min-width: 2900px) {
-
-	:root {
-	--content-width: min(60vw, 2100px);
-	--intro-width: 50vw;
-	font-size: 32px;
-	
-}
-}
