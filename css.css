@@ -54,6 +54,7 @@
 	justify-content: center;
 	align-items: center;
 	width: var(--content-width);
+	margin: var(--content-margin);
 	}
 	
 	i {
