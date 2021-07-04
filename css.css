@@ -9,7 +9,7 @@
 
 	:root {
 	--content-width: 97.5vw;
-	--content-margin: 0 calc((100vw - var(--content-width)) / 2) 0 calc((100vw - var(--content-width)) / 2);
+	--content-margin: /*0 calc((100vw - var(--content-width)) / 2) 0 calc((100vw - var(--content-width)) / 2)*/;
 	--showcase-margin: 0 calc(calc((100vw - var(--content-width)) / 2) * 2) 30px calc(calc((100vw - var(--content-width)) / 2) * 2 );
 	--socials-size: 1.75rem;
 	--socials-margin: 1.75rem;
@@ -25,7 +25,7 @@
 	--name-bottom-margin: 10px;
 	--title-margin: 2.2rem 0 1rem 0;
 	--subcard-width: calc(var(--content-width) * 0.9);
-	--subcard-margin: 0 0 10px calc((100vw - var(--subcard-width)) / 4); 
+	--subcard-margin: 0 0 10px calc((100vw - var(--subcard-width)) / 4);
 	--subcard-padding: 1px 17px 9 18px;
 	--showcase-width: calc(var(--content-width) * 0.9);
 	--showoff-width: calc(var(--content-width) * 0.8);
@@ -37,15 +37,19 @@
 		font-weight: 300;
 		overflow-x: hidden;
 	}
+	
+	html {
+	width: 100vw;
+	}
 
 	body {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
 	margin: 0;
 	padding: 0;
+	width: 100vw;
 	}
 
 	#content {
