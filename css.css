@@ -27,9 +27,9 @@
 	--subcard-width: calc(var(--content-width) * 0.9);
 	--subcard-margin: 0 0 10px calc((100vw - var(--subcard-width)) / 4);
 	--subcard-padding: 1px 17px 9 18px;
-	--showcase-width: calc(var(--content-width) * 0.9);
-	--showoff-width: calc(var(--content-width) * 0.8);
-	--showoff-margin: 0 calc((var(--content-width) - (var(--content-width) * 0.8)) / 2) 0 calc((var(--content-width) - (var(--content-width) * 0.8)) / 2);
+	--showcase-width: calc(var(--content-width) * 0.95);
+	--showoff-width: calc(var(--content-width) * 0.95);
+	--showoff-margin: 0 calc((var(--content-width) - var(--showoff-width)) / 2) 0 calc((var(--content-width) - var(--showoff-width)) / 2);
 		font-size: 14px;;
 		background: #404040;
 		color: #f0f0f0;
@@ -152,7 +152,7 @@
 	}
 	
 	.show-off {
-	width: calc(var(--content-width) * 0.8);
+	width: var(--showoff-width);
 	margin: var(--showoff-margin);
 	}
 	 
