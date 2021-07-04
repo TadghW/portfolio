@@ -1,3 +1,8 @@
+/*I design webpages for ~240px devices first, and work my way up to larger devices in media queries*/
+
+/*240px is the width of the slim screen on the back of the Galaxy Fold, and is the smallest consumer device I know of*/
+
+/*As this webpage is built with flex, var(), and calc() it's not compatible with <IE10 or Opera Mini*/
 :root {
 background: #404040;
 color: #f0f0f0;
@@ -119,6 +124,13 @@ text-align: center;
 margin-top: 3rem;
 }
 
+/*Media queries are often structured as a list of target devices but I prefer to design/test them with responsive breakpoints
+as CSS heights vary wildly from actual device width for small HiDPI devices like phones.*/
+
+/*I still keep devices sizes in mind when writing queries, and have commented out the kinds of devices that might use each
+listed resolution*/ 
+
+/*Break for small tablets - first layout change*/
 @media (min-width: 600px) {
 
 #socials {
@@ -138,6 +150,7 @@ margin-top: -60px;
 }
 }
 
+/*Break for small laptops / desktops / larger tablets - second layout change*/
 @media (min-width: 1000px) {
 
 #selfie {
@@ -169,6 +182,7 @@ margin-top: 4rem;
 }
 }
 
+/*Break for 1280-1366 devices*/
 @media (min-width: 1225px) {
 
 :root {
@@ -185,6 +199,7 @@ margin-top: 3rem;
 
 }
 
+/*Break for everything up to 1920*/
 @media (min-width: 1500px) {
 
 :root {
@@ -192,6 +207,7 @@ font-size: 20px;
 }
 }
 
+/*Break for HiDPI monitors (2K +)*/
 @media (min-width: 2050px) {
 
 :root {
@@ -210,7 +226,17 @@ margin-top: 4rem;
 .showcase {
 margin: 0 0 2.5rem 0;
 }
+}
 
+/*Break for 4K monitors*/
+
+@media (min-width: 3400px) {
+
+:root {
+font-size: 24px;
+--body-width: 1700px;	
+/*for ultra-widescreen devices you could write min(), max(), or clamp() functions but I find setting
+a single width beyond 16:9 aspect rations makes for a better user experience - same with large HiDPI displays*/
 }
 
 
